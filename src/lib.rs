@@ -113,6 +113,8 @@ impl MemoryMapEntryKind {
     pub const MEMORY_MAP: Self = Self(0x8000_0000_0000_0001);
     /// The memory region is used for the list of module descriptors.
     pub const MODULE_DESCRIPTORS: Self = Self(0x8000_0000_0000_0002);
+    /// The memory region is used for the names in the list of module descriptors.
+    pub const MODULE_NAMES: Self = Self(0x8000_0000_0000_0003);
 
     /// The memory region occupied by the kernel.
     pub const KERNEL: Self = Self(0x8000_0000_0001_0000);
