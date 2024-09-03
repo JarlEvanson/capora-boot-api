@@ -38,8 +38,6 @@ pub struct BootloaderResponse {
     /// The length, in bytes, of [`BootloaderResponse::bootloader_version`].
     pub bootloader_version_length: usize,
 
-    /// The physical address of the base of the kernel.
-    pub kernel_physical_address: u64,
     /// The virtual address of the base of the kernel.
     pub kernel_virtual_address: *const core::ffi::c_void,
 
@@ -63,6 +61,8 @@ pub struct BootloaderResponse {
     pub sm_bios_entry_64: *const core::ffi::c_void,
 
     /// A pointer to the ACPI RSDP table.
+    ///
+    /// NULL if not found.
     pub rsdp_table_ptr: *const core::ffi::c_void,
     /// A pointer to the UEFI System Table.
     ///
