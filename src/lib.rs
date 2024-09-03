@@ -1,10 +1,22 @@
 #![no_std]
 
+/// The signature that identifies the start of the [`BootloaderRequest`].
+pub const SIGNATURE: [u64; 3] = [
+    0b10011101_00010111_00010101_01011111_11110011_01100010_10011111_00001001,
+    0b11010100_11010111_00101111_01000011_00111111_00100100_01010101_10111101,
+    0b01000111_00000110_00110010_11010110_00110010_10010101_10110110_11110010,
+];
+
+/// The version of the API that this currently describes.
+pub const API_VERSION: u64 = 0;
+
 /// Information that the kernel shares with the bootloader to allow the
 /// bootloader to properly load the kernel.
 #[repr(C)]
 #[derive(Clone, Copy, Debug, Hash, PartialEq, Eq, PartialOrd, Ord)]
 pub struct BootloaderRequest {
+    /// The signature to indicate that this request is valid.
+    pub signature: [u64; 3],
     /// The version of the API that this kernel expects to communicate using.
     pub api_version: u64,
 }
