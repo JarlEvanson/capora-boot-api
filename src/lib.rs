@@ -10,6 +10,9 @@ pub const SIGNATURE: [u64; 3] = [
 /// The version of the API that this currently describes.
 pub const API_VERSION: u64 = 0;
 
+/// The segment type that specifies the location of the the bootloader request.
+pub const BOOTLOADER_REQUEST_ELF_SEGMENT: u32 = 0x69B2BA6E;
+
 /// Information that the kernel shares with the bootloader to allow the
 /// bootloader to properly load the kernel.
 #[repr(C)]
