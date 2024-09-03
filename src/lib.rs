@@ -106,24 +106,6 @@ impl MemoryMapEntryKind {
     /// Once everything from the bootloader has been copied, this memory region can
     /// be used.
     pub const BOOTLOADER: Self = Self(6);
-
-    /// The memory region contains the UEFI memory map.
-    pub const UEFI_MEMORY_MAP: Self = Self(0x8000_0000_0000_0000);
-    /// The memory region contains the memory map to be used for allocation.
-    pub const MEMORY_MAP: Self = Self(0x8000_0000_0000_0001);
-    /// The memory region is used for the list of module descriptors.
-    pub const MODULE_DESCRIPTORS: Self = Self(0x8000_0000_0000_0002);
-    /// The memory region is used for the names in the list of module descriptors.
-    pub const MODULE_NAMES: Self = Self(0x8000_0000_0000_0003);
-
-    /// The memory region occupied by the kernel.
-    pub const KERNEL: Self = Self(0x8000_0000_0001_0000);
-    /// The inclusive start of the range of memory kinds corresponding to memory used for
-    /// a specific module.
-    pub const MODULE_MEMORY_START: Self = Self(0x8000_0000_0001_0001);
-    /// The inclusive end of the range of memory kinds corresponding to memory used for
-    /// a specific module.
-    pub const MODULE_MEMORY_END: Self = Self(0xFFFF_FFFF_FFFF_FFFF);
 }
 
 /// A descriptor of a module loaded at boot time.
