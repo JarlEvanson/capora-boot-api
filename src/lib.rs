@@ -121,6 +121,13 @@ impl MemoryMapEntryKind {
     /// Once everything from the bootloader has been copied, this memory region can
     /// be used.
     pub const BOOTLOADER: Self = Self(6);
+    /// The memory region contains kernel code or data.
+    pub const KERNEL: Self = Self(7);
+    /// The memory region contains a module.
+    ///
+    /// A memory region of this type contains only a single module, and serves no purpose other
+    /// than storing the data of that module.
+    pub const MODULE: Self = Self(8);
 }
 
 /// A descriptor of a module loaded at boot time.
