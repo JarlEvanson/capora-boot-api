@@ -40,6 +40,10 @@ pub struct BootloaderResponse {
 
     /// The virtual address of the base of the kernel.
     pub kernel_virtual_address: *const core::ffi::c_void,
+    /// Offset of the higher half direct mapped memory.
+    ///
+    /// This region of memory is mapped as readable, writable, and executable.
+    pub direct_map: usize,
 
     /// An array of [`MemoryMapEntry`]s.
     ///
